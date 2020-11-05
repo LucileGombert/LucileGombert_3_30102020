@@ -367,4 +367,48 @@ img {
   width: 11rem;
 }
 
+/* ********** Media queries ********** */
+@media all and (min-width: 600px) {
+  .operation-bloc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .restaurant {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 13rem 13rem;
+    column-gap: 2rem;
+  }
+
+  .menu-img-img {
+    max-height: 400px;
+  }
+
+  .menu-bloc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .menu-part {
+    width: 45%;
+  }
+
+  .footer {
+    text-align: center;
+  }
+}
+@media all and (min-width: 1200px) {
+  .menu-part {
+    width: 30%;
+  }
+}
+@media all and (min-width: 1700px) {
+  .restaurant {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 16rem;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
