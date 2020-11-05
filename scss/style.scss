@@ -49,6 +49,9 @@ body {
     transform-origin:top;
     transform: scale(0);
     animation: loader 3s;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 @keyframes loader {
@@ -388,9 +391,9 @@ animation: bouncing 0.4s 0.2s alternate infinite;
             .menu-part-choice-desc-price {
                 font-weight: bold;
             }
-            // .menu-part-choice-desc-food {
-            //     width: 85%;
-            // }
+            .menu-part-choice-desc-food {
+                // width: 85%;  
+            }
         }
     }
 }
@@ -465,11 +468,16 @@ animation: bouncing 0.4s 0.2s alternate infinite;
 }
 
 .menu-part-choice:hover .menu-part-choice-desc-food {
+    overflow: hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
+    width: 60%;
 }
+
 .menu-part-choice:hover .menu-part-choice-desc-price {
     margin-right: 3rem;
-  }
+}
+
 .menu-part-choice:hover .fa-check {
     animation: fa-check 0.5s;
 }
