@@ -1,0 +1,185 @@
+/* ********** All ********** */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  object-fit: cover;
+}
+
+.btn {
+  background: radial-gradient(ellipse farthest-corner at top left, #ff79da, #9356dc);
+  color: white;
+  padding: 1rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0.2rem 0.6rem 0.5rem 0 rgba(92, 90, 90, 0.1);
+}
+.btn.btn:hover {
+  opacity: 0.8;
+  box-shadow: 0.2rem 0.4rem 0.5rem 0.5rem rgba(58, 57, 57, 0.1);
+}
+
+/* ********** Accueil ********** */
+.header-title {
+  text-align: center;
+  font-family: "Shrikhand", cursive;
+}
+
+.location {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  background-color: #F6F6F6;
+}
+.location .location-area {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #e4e4e4;
+  box-shadow: 0px -4px 4px #d8d7d7;
+}
+.location .location-area .location-line {
+  font-weight: bold;
+  width: 10rem;
+  border: none;
+  background-color: #e4e4e4;
+  padding-left: 1rem;
+}
+.location .location-explain {
+  padding: 2.8rem 1rem;
+}
+
+.operation {
+  font-family: "Roboto", sans-serif;
+}
+.operation .operation-title {
+  padding-left: 1rem;
+}
+.operation .operation-line {
+  display: flex;
+  align-items: center;
+  background-color: #F6F6F6;
+  border-radius: 20px;
+  box-shadow: 0.4rem 1rem 0.5rem 0 rgba(92, 90, 90, 0.1);
+  padding: 0 1rem;
+  margin: 2rem;
+  cursor: pointer;
+}
+.operation .operation-line:hover {
+  background-color: rgba(147, 86, 220, 0.1);
+}
+.operation .operation-line:hover i {
+  color: #9356DC;
+}
+.operation .operation-line .operation-line-number {
+  background-color: #9356DC;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: -1.5rem;
+  color: white;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.operation .operation-line .operation-line-icon {
+  padding: 1.5rem 1.3rem 1.5rem 2.5rem;
+  color: gray;
+}
+.operation .operation-line .operation-line-text {
+  font-size: 0.8rem;
+}
+
+.restaurant {
+  font-family: "Roboto", sans-serif;
+  background-color: #F6F6F6;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 13rem 13rem 13rem 13rem;
+  row-gap: 2rem;
+  padding: 1.5rem 1.5rem 3rem 1.5rem;
+  margin: 4rem 0 0 0;
+}
+.restaurant.restaurant a {
+  text-decoration: none;
+  color: black;
+}
+.restaurant .restaurant-title {
+  margin: 1rem 0 0 0;
+  padding: 0;
+  grid-column: 1/-1;
+}
+.restaurant .restaurant-card {
+  box-shadow: 1px 1px 10px #afaeae;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.restaurant .restaurant-card .restaurant-card-img {
+  position: relative;
+  flex: 1;
+}
+.restaurant .restaurant-card .restaurant-card-img .restaurant-card-img-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.restaurant .restaurant-card .restaurant-card-desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.3rem;
+}
+.restaurant .restaurant-card .restaurant-card-desc .restaurant-card-desc-text-title {
+  margin: 1rem 0 0 0;
+  font-size: 1rem;
+}
+.restaurant .restaurant-card .restaurant-card-desc .restaurant-card-desc-text-location {
+  margin: 0 0 1rem 0;
+}
+.restaurant .restaurant-card .restaurant-card-desc .restaurant-card-desc-icon {
+  font-size: 1.5rem;
+  padding-right: 0.5rem;
+  transition: color 0.7s ease-out;
+  cursor: pointer;
+}
+.restaurant .restaurant-card .restaurant-card-desc .restaurant-card-desc-icon.restaurant-card-desc-icon:hover {
+  font-weight: bolder;
+  background: radial-gradient(ellipse farthest-corner at bottom left, #ff79da, #9356dc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.footer {
+  background-color: #353535;
+  color: white;
+  padding: 1.5rem;
+}
+.footer.footer a {
+  text-decoration: none;
+  color: white;
+}
+.footer.footer h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.3rem;
+}
+.footer.footer h2, .footer.footer h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+.footer .fa-utensils {
+  padding-right: 1rem;
+}
+.footer .fa-hands-helping {
+  padding-right: 0.5rem;
+}
+.footer.footer h3 {
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=style.css.map */
