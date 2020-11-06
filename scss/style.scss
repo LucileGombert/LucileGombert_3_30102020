@@ -30,17 +30,34 @@ body {
     border: none;
     cursor: pointer;
     box-shadow: 0.2rem 0.6rem 0.5rem 0 rgba(92, 90, 90, 0.1);
-    &.btn:hover {
+    &:hover {
         opacity: 0.8;  
         box-shadow: 0.2rem 0.4rem 0.5rem 0.5rem rgba(58, 57, 57, 0.1);
     }
 }
 
+.fa-heart {
+    font-size: 1.5rem;
+    padding-right: 0.5rem;
+    transition: color .7s ease-out;
+    cursor: pointer;
+    &:hover {
+        font-weight: bolder;
+        background: radial-gradient(ellipse farthest-corner at bottom left, #ff79da, #9356dc);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
 /* ********** Loader ********** */
-.loader {
+.loading {
     background: $bloc-bg-color;
     background-size: cover;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     width: 100%;
     height: 200%;
     top: 0;
@@ -48,13 +65,56 @@ body {
     z-index: 2;
     transform-origin:top;
     transform: scale(0);
-    animation: loader 3s;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    animation: loaderAppaer 3s;
+    &__spinner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20rem;
+        &__title {
+            font-family: Shrikhand;
+            font-size: 3rem;
+            padding-bottom: 3rem;
+        }
+        &__ball {
+            width: 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &__item {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                
+                &_primaryColor {
+                    background: $primary-color;
+                }
+                &_secondaryColor {
+                    background: $secondary-color;
+                }
+                &_tertiaryColor {
+                    background: $tertiary-color;
+                }
+                &:nth-child(1) {
+                    animation: rebound 0.4s alternate infinite;
+                }
+                &:nth-child(2) {
+                    animation: rebound 0.4s 0.1s alternate infinite;
+                }
+                &:nth-child(3) {
+                    animation: rebound 0.4s 0.2s alternate infinite;
+                }
+            }
+        }
+        &__icon {
+            font-size: 2rem;
+            padding-top: 3rem;
+        }
+    }
 }
 
-@keyframes loader {
+@keyframes loaderAppaer {
     0% {
         opacity: 1;
         transform: scale(1);
@@ -78,44 +138,7 @@ body {
     }
 } 
 
-.loading-spinner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20rem;
-    .loading-spinner-title {
-        font-family: Shrikhand;
-        font-size: 3rem;
-        padding-bottom: 3rem;
-        }
-    .loading-spinner-ball {
-        width: 90px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .loading-spinner-ball-item {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-        }
-        .item1 {
-            background: #9356DC;
-        }
-        .item2 {
-        background: #FF79DA;
-        }
-        .item3 {
-        background: #99e2d0;
-        }
-    }
-    .loading-spinner-icon {
-        font-size: 2rem;
-        padding-top: 3rem;
-    }
-}
-
-@keyframes bouncing {
+@keyframes rebound {
     0% {
         transform: translate3d(0, 10px, 0);
     }
@@ -124,21 +147,8 @@ body {
     }
 }
 
-.loading-spinner-ball-item:nth-child(1) {
-animation: bouncing 0.4s alternate infinite;
-}
-
-.loading-spinner-ball-item:nth-child(2) {
-animation: bouncing 0.4s 0.1s alternate infinite;
-}
-
-.loading-spinner-ball-item:nth-child(3) {
-animation: bouncing 0.4s 0.2s alternate infinite;
-}
-
 /* ********** Accueil ********** */
-.header-title {
-    
+.header__title {
     text-align: center;
     @include title-font();
 }
@@ -147,12 +157,12 @@ animation: bouncing 0.4s 0.2s alternate infinite;
     text-align: center;
     @include text-font();
     background-color: $bloc-bg-color;
-    .location-area {
+    &__area {
         width: 100%;
         padding: 1rem 0;
         background-color: darken($bloc-bg-color,7%);
         box-shadow: 0px -4px 4px rgb(216, 215, 215);
-        .location-line {
+        &__line {
             font-weight: bold;
             width: 10rem;
             border: none;
@@ -160,17 +170,17 @@ animation: bouncing 0.4s 0.2s alternate infinite;
             padding-left: 1rem;
         }
     }
-    .location-explain {
+    &__explain {
         padding: 2.8rem 1rem;
     }
 }
 
 .operation {
     @include text-font();
-    .operation-title {
+    &__title {
         padding-left: 1rem;
     }
-    .operation-line {
+    &__bloc__line {
         display: flex;
         align-items: center;
         background-color: $bloc-bg-color;
@@ -185,7 +195,7 @@ animation: bouncing 0.4s 0.2s alternate infinite;
         &:hover i {
             color: $primary-color;
         }
-        .operation-line-number {
+        &__number {
             background-color: $primary-color;
             border-radius: 50%;
             width: 1.5rem;
@@ -197,11 +207,11 @@ animation: bouncing 0.4s 0.2s alternate infinite;
             justify-content: center;
             align-items: center;
         }
-        .operation-line-icon {
+        &__icon {
             padding: 1.5rem 1.3rem 1.5rem 2.5rem;
             color: gray;
         }
-        .operation-line-text {
+        &__text {
             font-size: 0.8rem;
         }
     }
@@ -220,51 +230,38 @@ animation: bouncing 0.4s 0.2s alternate infinite;
         text-decoration: none;
         color: black;
     }
-    .restaurant-title {
+    &__title {
         margin: 1rem 0 0 0;
         padding: 0;
         grid-column: 1/-1; 
     }
-    .restaurant-card {
+    &__card {
         box-shadow: 1px 1px 10px #afaeae;
         border-radius: 1rem;
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        .restaurant-card-img {
+        &__img {
             position: relative;
             flex: 1;
-            .restaurant-card-img-img  {
+            &__img  {
                 position: absolute;
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
             }
         }
-        .restaurant-card-desc {
+        &__desc {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 1.3rem;
-            .restaurant-card-desc-text-title {
+            &__text__title {
                 margin:1rem 0 0 0;
                 font-size: 1rem;
             }
-            .restaurant-card-desc-text-location {
+            &__text__location {
                 margin: 0 0 1rem 0;
-            }
-            .restaurant-card-desc-icon {
-                font-size: 1.5rem;
-                padding-right: 0.5rem;
-                transition: color .7s ease-out;
-                cursor: pointer;
-                &.restaurant-card-desc-icon:hover {
-                    font-weight: bolder;
-                    background: radial-gradient(ellipse farthest-corner at bottom left, #ff79da, #9356dc);
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    color: transparent;
-                }
             }
         }
     }
@@ -274,16 +271,15 @@ animation: bouncing 0.4s 0.2s alternate infinite;
     background-color: $footer-bg-color;
     color: white;
     padding: 1.5rem;
-    
     &.footer a {
         text-decoration: none;
         color: white;
     }
-    &.footer h1 {
+    &__h1 {
         @include title-font();
         font-size: 1.3rem;
     }
-    &.footer h2 , &.footer h3 {
+    &__h2 , &__h3 {
         @include text-font();
         font-size: 1rem;
     }
@@ -293,7 +289,7 @@ animation: bouncing 0.4s 0.2s alternate infinite;
     .fa-hands-helping {
         padding-right: 0.5rem;
     }
-    &.footer h3 {
+    &__h3 {
         font-weight: normal;
     }
 }
@@ -390,9 +386,6 @@ animation: bouncing 0.4s 0.2s alternate infinite;
             position: relative;
             .menu-part-choice-desc-price {
                 font-weight: bold;
-            }
-            .menu-part-choice-desc-food {
-                // width: 85%;  
             }
         }
     }
@@ -499,7 +492,7 @@ animation: bouncing 0.4s 0.2s alternate infinite;
 
 /* ********** Media queries ********** */
 @media all and(min-width: 600px) {
-    .operation-bloc {
+    .operation__bloc {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
