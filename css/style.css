@@ -14,7 +14,7 @@ img {
 }
 
 .btn {
-  background: radial-gradient(ellipse farthest-corner at top left, #ff79da, #9356dc);
+  background: radial-gradient(ellipse farthest-corner at top left, #FF79DA, #9356DC);
   color: white;
   padding: 1rem;
   border-radius: 30px;
@@ -35,7 +35,7 @@ img {
 }
 .fa-heart:hover {
   font-weight: bolder;
-  background: radial-gradient(ellipse farthest-corner at bottom left, #ff79da, #9356dc);
+  background: radial-gradient(ellipse farthest-corner at bottom left, #FF79DA, #9356DC);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -252,6 +252,7 @@ img {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .restaurant__card__img {
   position: relative;
@@ -262,6 +263,16 @@ img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+.restaurant__card__new {
+  background-color: #99e2d0;
+  border-radius: 2px;
+  color: #2c9c81;
+  font-weight: bold;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  padding: 0.4rem 0.8rem;
 }
 .restaurant__card__desc {
   display: flex;
@@ -369,14 +380,19 @@ img {
 .menu__bloc__part__choice:hover::after {
   width: 3rem;
 }
+.menu__bloc__part__choice:hover .menu__bloc__part__choice__title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 2.5rem;
+}
 .menu__bloc__part__choice:hover .menu__bloc__part__choice__desc__food {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: 60%;
 }
 .menu__bloc__part__choice:hover .menu__bloc__part__choice__desc__price {
-  margin-right: 3rem;
+  margin: 0 3rem 0 0.5rem;
 }
 .menu__bloc__part__choice:hover .menu__bloc__part__choice__check {
   display: flex;

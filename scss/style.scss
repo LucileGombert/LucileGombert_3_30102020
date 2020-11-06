@@ -28,7 +28,7 @@ img {
 }
 
 .btn {
-    background: radial-gradient(ellipse farthest-corner at top left, #ff79da, #9356dc);
+    background: radial-gradient(ellipse farthest-corner at top left, $secondary-color, $primary-color);
     color: white;
     padding: 1rem;
     border-radius: 30px;
@@ -48,7 +48,7 @@ img {
     cursor: pointer;
     &:hover {
         font-weight: bolder;
-        background: radial-gradient(ellipse farthest-corner at bottom left, #ff79da, #9356dc);
+        background: radial-gradient(ellipse farthest-corner at bottom left,$secondary-color, $primary-color);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
@@ -268,6 +268,7 @@ img {
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        position: relative;
         &__img {
             position: relative;
             flex: 1;
@@ -277,6 +278,16 @@ img {
                 width: 100%;
                 object-fit: cover;
             }
+        }
+        &__new {
+            background-color: $tertiary-color;
+            border-radius: 2px;
+            color: darken($tertiary-color, 35%);
+            font-weight: bold;
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            padding: 0.4rem 0.8rem;
         }
         &__desc {
             display: flex;
@@ -383,14 +394,19 @@ img {
             &:hover::after {
                 width: 3rem; 
             }
+            &:hover &__title {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin-right: 2.5rem;
+            }
             &:hover &__desc__food {
                 overflow: hidden;
                 white-space: nowrap;
                 text-overflow: ellipsis;
-                width: 60%;
             }
             &:hover &__desc__price {
-                margin-right: 3rem;
+                margin: 0 3rem 0 0.5rem;
             }
             &:hover &__check{
                 display: flex;
